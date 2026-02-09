@@ -16,6 +16,34 @@ Company.destroy_all
 
 # 2. insert new rows in companies table
 
+puts "There are #{Company.all.count} companies."
+
+apple = Company.new
+apple["name"] = "Apple Inc."
+apple["url"] = "https://apple.com"
+apple["city"] = "Cupertino"
+apple["state"] = "CA"
+apple.save
+
+puts "There are #{Company.all.count} companies."
+
+amazon = Company.new
+amazon["name"] = "Amazon.com, Inc."
+amazon["city"] = "Seattle"
+amazon["state"] = "WA"
+amazon.save
+
+puts "There are #{Company.all.count} companies."
+
+tesla = Company.new
+tesla["name"] = "Tesla, Inc."
+tesla["url"] = "https://tesla.com"
+tesla["city"] = "Palo Alto"
+tesla["state"] = "CA"
+tesla.save
+
+puts "There are #{Company.all.count} companies."
+
 # 3. query companies table to find all row with California company
 
 # 4. query companies table to find single row for Apple
