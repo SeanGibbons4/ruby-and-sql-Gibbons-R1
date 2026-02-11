@@ -32,6 +32,9 @@ amazon["name"] = "Amazon.com, Inc."
 amazon["city"] = "Seattle"
 amazon["state"] = "WA"
 amazon.save
+amazon = Company.find_by({"name" => "Amazon.com, Inc."})
+amazon["url"] = "https://www.amazon.com"
+amazon.save
 
 puts "There are #{Company.all.count} companies."
 
@@ -43,6 +46,15 @@ tesla["state"] = "CA"
 tesla.save
 
 puts "There are #{Company.all.count} companies."
+
+
+company = Company.where({"state" => "CA", "name" => "Apple Inc."})[0]
+puts company.inspect
+
+company = Company.find_by({"name" => "Amazon.com, Inc."})
+puts company.inspect
+
+puts Company.all.inspect
 
 # 3. query companies table to find all row with California company
 
